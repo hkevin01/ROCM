@@ -1,0 +1,106 @@
+name: Bug Report
+description: File a bug report to help us improve
+title: "[BUG] "
+labels: ["bug", "triage"]
+assignees:
+  - hkevin01
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report! Please provide as much detail as possible.
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Pre-submission Checklist
+      description: Please verify these steps before submitting
+      options:
+        - label: I have searched existing issues to ensure this is not a duplicate
+          required: true
+        - label: I have tested with the latest version of the project
+          required: true
+        - label: I have read the documentation and troubleshooting guide
+          required: true
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      description: Which component is affected?
+      options:
+        - ROCm Detection
+        - PyTorch Integration
+        - TensorFlow Integration
+        - Keras Integration
+        - pgmpy Integration
+        - Test Framework
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of what the bug is
+      placeholder: Describe the issue you're experiencing...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: Steps to reproduce the behavior
+      placeholder: |
+        1. Run command '...'
+        2. Navigate to '...'
+        3. See error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What you expected to happen
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: What actually happened, including any error messages
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment Information
+      description: Please provide your system information
+      placeholder: |
+        - OS: [e.g., Ubuntu 22.04]
+        - Python Version: [e.g., 3.10.6]
+        - ROCm Version: [e.g., 5.4.3]
+        - GPU: [e.g., RX 6800 XT]
+        - Framework Versions: [e.g., PyTorch 2.0.1, TensorFlow 2.13.0]
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant Log Output
+      description: Please copy and paste relevant log output
+      render: shell
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Add any other context about the problem here

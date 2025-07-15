@@ -39,6 +39,11 @@ model.add_cpds(cpd_closed_shape, cpd_straight_lines, cpd_digit_zero)
 # Check if the model is valid
 assert model.check_model()  # Validates the model structure and CPDs
 
+# Print the CPDs (CPTs) for each variable
+print("Conditional Probability Tables (CPTs):")
+for cpd in model.get_cpds():
+    print(cpd)
+
 # Perform inference using Variable Elimination
 inference = VariableElimination(model)
 
@@ -49,4 +54,5 @@ result = inference.query(variables=['DigitZero'],
 # Here, '1' indicates True for both 'ClosedShape' and 'StraightLines'.
 
 # Print the result of the query
+print("\nQuery Result:")
 print(result)  # Outputs the probability distribution of 'DigitZero'
